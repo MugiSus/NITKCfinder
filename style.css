@@ -1,0 +1,37 @@
+@font-face {
+    font-family: Inter;
+    font-weight: 100 900;
+    src: url("Inter-VariableFont_slnt\,wght.ttf");
+}
+
+html, body {
+    font-family: Inter;
+    margin: 0;
+    background-color: #F2F2F2;
+    overflow: hidden;
+    user-select: none;
+    
+}
+
+#title-find-nitkc {
+    color: #10101020;
+    font-style: italic;
+    position: fixed;
+    bottom: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.map {
+    transition-property: transform;
+    transition-duration: 2000ms;
+    transition-timing-function: cubic-bezier(0.2, 0, 0.25, 1);
+    transform: translate(-80%, -15%);
+}
