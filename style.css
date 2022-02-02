@@ -32,8 +32,8 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    transition-property: top, left;
+    transition-property: transform;
     transition-duration: 2000ms;
     transition-timing-function: cubic-bezier(0.2, 0, 0.25, 1);
-    transform: translate(-1000px, -200px);
+    /* transform: translate(-1000px, -200px); */
 }
