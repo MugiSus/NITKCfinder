@@ -13,12 +13,6 @@ class Floor {
         this.unfocus();
     }
 
-    applyHTMLElement(DOMElement) {
-        this.DOMElement = DOMElement;
-        this.unfocus();
-        return DOMElement;
-    }
-
     translate(x, y, scrollx, scrolly, scrollz) {
         this.DOMElement.style.transform = `translate3d(${-scrollx + x}px, ${-scrolly + y}px, ${-scrollz + this.z * 40}px)`;
         console.log(this.DOMElement.style.transform);
