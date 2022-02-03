@@ -29,6 +29,7 @@ html, body {
     /* --camera-x: attr(data-camera-x px);
     --camera-y: attr(data-camera-y px);
     --camera-z: attr(data-camera-z px); */
+    
 }
 
 .map {
@@ -39,4 +40,5 @@ html, body {
     transition-delay: 0ms, 750ms;
     transition-duration: 2000ms, 1000ms;
     transition-timing-function: cubic-bezier(0.2, 0, 0.25, 1);
+    
 }
