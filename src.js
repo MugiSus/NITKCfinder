@@ -4,13 +4,13 @@ class Floor {
     constructor(imgsrc, z) {
         this.imgsrc = imgsrc;
         this.z = z;
+        floorsCollection.set(this.imgsrc, this);
 
         this.DOMElement = document.createElement("img");
         this.DOMElement.classList.add("map");
         this.DOMElement.src = "./img/" + imgsrc + ".svg";
 
         ContainerElement.appendChild(this.DOMElement);
-        floorsCollection.set(this.imgsrc, this);
 
         this.unfocus();
     }
@@ -21,17 +21,19 @@ class Floor {
     }
 
     focus() {
-        this.DOMElement.style.opacity = 1;
+        this.DOMElement.classList.add("focused");
+        this.DOMElement.classList.remove("unfocused");
         return this.focused = true;
     }
     
     unfocus() {
-        this.DOMElement.style.opacity = 0.1;
+        this.DOMElement.classList.remove("focused");
+        this.DOMElement.classList.add("unfocused");
         return this.focused = false;
     }
 
-    toggleFocus() {
-        return this.focused ? this.unfocus() : this.focus();
+    toggleFocus(force) {
+        return force ?? !this.focused ? this.focus() : this.unfocus();
     }
 }
 
@@ -66,6 +68,14 @@ class CameraPropeties {
             facility.translate(this.scrollx, this.scrolly, this.scrollz)
         );
     }
+
+    focus(z) {
+        this.facilities.forEach(facility => 
+            facility.floors.forEach(floor => 
+                floor.toggleFocus(floor.z == z)
+            )
+        );
+    }
 }
 
 const floorsCollection = new Map();
@@ -75,6 +85,9 @@ const facilities = [
         new Floor("education-building-2f", 0),
         new Floor("education-building-3f", 1),
         new Floor("education-building-4f", 2),
+    ]),
+    new Facility("Education-Research Passage", 800, -195, [
+        new Floor("education-research-passage", 0),
     ])
 ];
 
