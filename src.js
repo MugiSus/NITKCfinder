@@ -2,12 +2,13 @@ class Floor {
     constructor(imgsrc, z) {
         this.imgsrc = "./img/" + imgsrc;
         this.z = z;
-        this.focused = true;
-        this.DOMElement;
+        this.DOMElement = null;
+        this.focused = false;
     }
 
     applyHTMLElement(DOMElement) {
         this.DOMElement = DOMElement;
+        this.setFocused(this.focused);
     }
 
     translate(x, y, scrollx, scrolly, scrollz) {
@@ -37,6 +38,7 @@ class Facility {
 }
 
 let scrollx = -200, scrolly = 0, scrollz = 0;
+
 
 const Facilities = [
     new Facility("Education Building", 0, 0, [
