@@ -1,9 +1,16 @@
 class Floor {
     constructor(imgsrc, z) {
-        this.id = imgsrc;
-        this.imgsrc = "./img/" + imgsrc + ".svg";
+        this.imgsrc = imgsrc;
         this.z = z;
-        this.DOMElement = null;
+
+        this.DOMElement = document.createElement("img");
+        this.DOMElement.classList.add("map");
+        this.DOMElement.src = "./img/" + imgsrc + ".svg";
+
+        containerElement.appendChild(this.DOMElement);
+        floorsCollection.set(this.imgsrc, this);
+
+        this.unfocus();
     }
 
     applyHTMLElement(DOMElement) {
@@ -18,15 +25,13 @@ class Floor {
     }
 
     focus() {
-        this.focused = true;
         this.DOMElement.style.opacity = 1;
-        return this.focused;
+        return this.focused = true;
     }
     
     unfocus() {
-        this.focused = false;
         this.DOMElement.style.opacity = 0.1;
-        return this.focused;
+        return this.focused = false;
     }
 }
 
@@ -70,6 +75,7 @@ class CameraPropeties {
 let cam = new CameraPropeties(0, 0, 0);
 const floorsCollection = new Map();
 
+const containerElement = document.getElementById("container");
 const facilities = [
     new Facility("Education Building", 0, 0, [
         new Floor("education-building-1f", -1),
@@ -78,19 +84,5 @@ const facilities = [
         new Floor("education-building-4f", 2),
     ])
 ];
-
-const containerElement = document.getElementById("container");
-
-facilities.forEach(facility => {
-    facility.floors.forEach(floor => {
-        const mapElement = document.createElement("img");
-        mapElement.classList.add("map");
-        mapElement.src = floor.imgsrc;
-        containerElement.appendChild(mapElement);
-
-        floor.applyHTMLElement(mapElement);
-        floorsCollection.set(floor.id, floor);
-    })
-});
 
 cam.scroll();
