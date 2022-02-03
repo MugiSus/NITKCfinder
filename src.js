@@ -1,7 +1,19 @@
 class Floor {
     constructor(imgsrc, z) {
         this.imgsrc = "./img/" + imgsrc;
+        this.x = 0;
+        this.y = 0;
         this.z = z;
+        this.HTMLElement;
+    }
+
+    applyHTMLElement(HTMLElement) {
+        this.HTMLElement = HTMLElement;
+    }
+
+    translate(x, y, scrollx, scrolly, scrollz) {
+        this.HTMLElement.style.transform = `translate3d(${-scrollx + x}px, ${-scrolly + y}px, ${-scrollz + this.z * 40}px)`;
+        console.log(this.HTMLElement.style.transform);
     }
 }
 
@@ -12,8 +24,15 @@ class Facility {
         this.name = name;
         this.floors = floors;
     }
+
+    translate(scrollx, scrolly, scrollz) {
+        this.floors.forEach(floor => 
+            floor.translate(this.x, this.y, scrollx, scrolly, scrollz)
+        )
+    }
 }
 
+let scrollx = -200, scrolly = 0, scrollz = 0;
 const Facilities = [
     new Facility("Education Building", 0, 0, [
         new Floor("education-building-1f.svg", -1),
@@ -21,7 +40,7 @@ const Facilities = [
         new Floor("education-building-3f.svg", 1),
         new Floor("education-building-4f.svg", 2),
     ])
-]
+];
 
 const containerElement = document.getElementById("container");
 
@@ -31,10 +50,9 @@ Facilities.forEach(facility => {
 
         mapElement.classList.add("map");
         mapElement.src = floor.imgsrc;
-        mapElement.style.transform = `translate(${facility.x + floor.z * 10}px, ${facility.y + floor.z * -10}px)`;
-
-        console.log(mapElement.style.transform);
-
         containerElement.appendChild(mapElement);
+
+        floor.applyHTMLElement(mapElement);
     })
+    facility.translate(scrollx, scrolly, scrollz);
 });
