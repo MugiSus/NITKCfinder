@@ -29,6 +29,10 @@ class Floor {
         this.DOMElement.style.opacity = 0.1;
         return this.focused = false;
     }
+
+    toggleFocus() {
+        return this.focused ? this.unfocus() : this.focus();
+    }
 }
 
 class Facility {
