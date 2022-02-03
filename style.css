@@ -36,7 +36,7 @@ html, body {
     top: 0;
     left: 0;
     transition-property: transform, opacity;
-    transition-delay: 0ms, 1000ms;
+    transition-delay: 0ms, 750ms;
     transition-duration: 2000ms, 1000ms;
     transition-timing-function: cubic-bezier(0.2, 0, 0.25, 1);
 }

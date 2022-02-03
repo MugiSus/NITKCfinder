@@ -1,19 +1,23 @@
 class Floor {
     constructor(imgsrc, z) {
         this.imgsrc = "./img/" + imgsrc;
-        this.x = 0;
-        this.y = 0;
         this.z = z;
-        this.HTMLElement;
+        this.focused = true;
+        this.DOMElement;
     }
 
-    applyHTMLElement(HTMLElement) {
-        this.HTMLElement = HTMLElement;
+    applyHTMLElement(DOMElement) {
+        this.DOMElement = DOMElement;
     }
 
     translate(x, y, scrollx, scrolly, scrollz) {
-        this.HTMLElement.style.transform = `translate3d(${-scrollx + x}px, ${-scrolly + y}px, ${-scrollz + this.z * 40}px)`;
-        console.log(this.HTMLElement.style.transform);
+        this.DOMElement.style.transform = `translate3d(${-scrollx + x}px, ${-scrolly + y}px, ${-scrollz + this.z * 40}px)`;
+        console.log(this.DOMElement.style.transform);
+    }
+
+    setFocused(focused) {
+        this.focused = focused;
+        this.DOMElement.style.opacity = focused ? 1 : 0.1;
     }
 }
 
@@ -33,6 +37,7 @@ class Facility {
 }
 
 let scrollx = -200, scrolly = 0, scrollz = 0;
+
 const Facilities = [
     new Facility("Education Building", 0, 0, [
         new Floor("education-building-1f.svg", -1),
@@ -47,7 +52,6 @@ const containerElement = document.getElementById("container");
 Facilities.forEach(facility => {
     facility.floors.forEach(floor => {
         const mapElement = document.createElement("img");
-
         mapElement.classList.add("map");
         mapElement.src = floor.imgsrc;
         containerElement.appendChild(mapElement);
