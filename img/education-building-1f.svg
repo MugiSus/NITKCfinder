@@ -9,6 +9,6 @@
 <rect x="850" y="420" width="200" height="75" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="250" y="230" width="200" height="350" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M786.558 444.999C774.132 444.999 764.058 455.073 764.058 467.499C764.058 479.925 774.132 489.999 786.558 489.999C798.984 489.999 809.058 479.925 809.058 467.499C809.058 455.073 798.984 444.999 786.558 444.999ZM759.058 467.499C759.058 452.311 771.37 439.999 786.558 439.999C801.746 439.999 814.058 452.311 814.058 467.499C814.058 482.687 801.746 494.999 786.558 494.999C771.37 494.999 759.058 482.687 759.058 467.499Z" fill="black"/>
-<path d="M850 380L850 420" stroke="black" stroke-width="5" stroke-linecap="round"/>
-<path d="M650 260V650H850" stroke="black" stroke-width="5"/>
+<path d="M850 380L850 420" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M650 260V650H850" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -9,6 +9,7 @@ class Floor {
         this.DOMElement = document.createElement("img");
         this.DOMElement.classList.add("map");
         this.DOMElement.src = "./img/" + imgsrc + ".svg";
+        this.DOMElement.style.zIndex = z;
 
         ContainerElement.appendChild(this.DOMElement);
 
@@ -69,7 +70,7 @@ class CameraPropeties {
         );
     }
 
-    focus(z) {
+    focusFloors(z) {
         this.facilities.forEach(facility => 
             facility.floors.forEach(floor => 
                 floor.toggleFocus(floor.z == z)
@@ -88,8 +89,17 @@ const facilities = [
     ]),
     new Facility("Education-Research Passage", 800, -195, [
         new Floor("education-research-passage", 0),
+    ]),
+    new Facility("Research Building", -700, -1325, [
+        new Floor("research-building-1f", 0),
+        new Floor("research-building-2f", 1),
+        new Floor("research-building-3f", 2),
+        new Floor("research-building-4f", 3),
     ])
 ];
 
 const cam = new CameraPropeties(facilities, 0, 0, 0);
-cam.scroll();
+//cam.scroll();
+
+cam.scroll(-250, -700, 1300);
+cam.focusFloors(0);

@@ -1,0 +1,19 @@
+<svg width="740" height="500" viewBox="0 0 740 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M640 240V285H580" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="580" y="100" width="60" height="140" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="520" y="100" width="60" height="140" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="280" y="100" width="240" height="140" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="460" y="285" width="120" height="115" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="280" y="285" width="60" height="115" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="100" y="285" width="60" height="115" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="160" y="285" width="60" height="115" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="220" y="285" width="60" height="115" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="100" y="205" width="40" height="35" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="190" y="205" width="30" height="35" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="220" y="225" width="30" height="15" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="160" y="100" width="60" height="105" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="100" y="100" width="60" height="105" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="340" y="285" width="120" height="115" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M220 100H280" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path d="M100 240V285" stroke="black" stroke-width="5" stroke-linecap="round"/>
+</svg>

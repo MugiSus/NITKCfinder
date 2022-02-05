@@ -48,6 +48,6 @@ html, body {
 }
 
 .map.unfocused {
-    opacity: 0.1;
+    opacity: 0.05;
     /* filter: blur(5px); */
 }
