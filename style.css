@@ -1,7 +1,7 @@
 @font-face {
     font-family: Inter;
     font-weight: 100 900;
-    src: url("Inter-VariableFont_slnt\,wght.ttf");
+    src: url("Inter-VariableFont_slnt,wght.ttf");
 }
 
 html, body {
@@ -19,6 +19,8 @@ html, body {
     bottom: 0.5rem;
     right: 1rem;
     font-size: 2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
 }
 
 #container {
