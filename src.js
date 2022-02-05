@@ -73,7 +73,8 @@ class CameraPropeties {
     focusFloors(z) {
         this.facilities.forEach(facility => 
             facility.floors.forEach(floor => 
-                floor.toggleFocus(floor.z == z)
+                floor.toggleFocus(floor.z == z) && 
+                console.log(floor.imgsrc)
             )
         );
     }
