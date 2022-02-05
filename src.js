@@ -95,11 +95,18 @@ const facilities = [
         new Floor("research-building-2f", 1),
         new Floor("research-building-3f", 2),
         new Floor("research-building-4f", 3),
+    ]),
+    new Facility("Reserch Building No.3", 185, -1900, [
+        new Floor("research-building-no3-1f", 0),
+        new Floor("research-building-no3-2f", 1),
+        new Floor("research-building-no3-3f", 2),
+        new Floor("research-building-no3-4f", 3),
+        new Floor("research-building-no3-5f", 4),
     ])
 ];
 
 const cam = new CameraPropeties(facilities, 0, 0, 0);
 //cam.scroll();
 
-cam.scroll(-250, -700, 1300);
+cam.scroll(-250, -1000, 2000);
 cam.focusFloors(0);
